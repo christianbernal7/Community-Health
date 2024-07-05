@@ -963,8 +963,7 @@ section,
   /* border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 90%); */
   margin: 10px;
   position: relative;
-  width: 300px;
-  height: 300px;
+
 }
 
 .services .content .service-item .number {
@@ -1039,6 +1038,7 @@ section,
     margin-bottom: 10px;
   }
 }
+
 
 /*--------------------------------------------------------------
 # About Section
@@ -2280,16 +2280,8 @@ section,
   object-fit: cover; /* This ensures the images are properly scaled and cropped */
 }
 
-.service-item {
-  transition: transform 0.6s ease;
-}
 
-.service-item:hover {
-  transform: scale(1.05);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.video-container {
+/* .video-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2297,7 +2289,7 @@ section,
   height: 0;
   margin-top: 100px;
   padding-bottom: 25.25%;
-}
+} */
 
 @keyframes fadeIn {
   0% {
@@ -2307,6 +2299,41 @@ section,
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 992px) {
+  .video-container {
+    padding-bottom: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    padding-bottom: 56.25%;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-container {
+    padding-bottom: 42.857%;
   }
 }
 
@@ -2422,10 +2449,48 @@ section,
   }
 }
 
-/* Apply animation to elements */
+
 .animate-on-scroll {
-  opacity: 0; /* Start hidden */
-  animation: fadeInUp 0.5s ease-out forwards; /* Apply animation */
+  opacity: 0; 
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
+.video-container iframe {
+  margin-bottom: 20px; 
+}
 
+/* Custom styles for better spacing and alignment */
+.service-item {
+  text-align: center;
+  margin-bottom: 30px; /* Base margin between service items */
+}
+
+.service-heading {
+  margin-top: 20px; /* Space above heading */
+}
+
+@media (max-width: 770px) {
+  .container-fluid {
+    justify-content: center; /* Centering the container contents */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-4 {
+    column-count: 1; /* Adjusting to 1 column per row */
+    gap: 2rem; /* Adjusting gap between columns */
+  }
+}
+
+@media (max-width: 590px) {
+  .container-fluid {
+    justify-content: center; /* Centering the container contents */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .row.row-cols-1.row-cols-md-2.row-cols-lg-4.g-4 {
+    column-count: 1; /* Adjusting to 1 column per row */
+    gap: 2rem; /* Adjusting gap between columns */
+  }
+}
