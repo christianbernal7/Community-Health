@@ -232,11 +232,14 @@ h6 {
 
 .header .logo {
   line-height: 1;
+  padding: 20px 0;
 }
 
 .header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
+  max-height: 250px;
+  max-width: 200px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .header .logo h1 {
@@ -2384,7 +2387,7 @@ section,
 }
 
 .faq .faq-container .faq-active {
-  background-color: var(--heading-color);
+  background-color: #116530;;
   transition: 0.3s;
 }
 
@@ -2424,3 +2427,5 @@ section,
   opacity: 0; /* Start hidden */
   animation: fadeInUp 0.5s ease-out forwards; /* Apply animation */
 }
+
+
